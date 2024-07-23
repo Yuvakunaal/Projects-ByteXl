@@ -1,0 +1,92 @@
+[] indicates buttons.
+... indicates details
+
+*** Step-1 :- ***
+-- Cover page :-
+---- Consisting of 'ADMIN','Customer' buttons or divs or etc
+
+*** Step-2 :- ***
+---- If Admin :-
+------- i. Asks for Login (Name,password -> inputs, login -> button)
+------- ii. NavBar :-
+----------- i. View all appointments requested (table -> displaying SNO,Name,Phno,DateTime,service_type,amount,[view more],(accept,reject))
+            | SNO | Name | Phno | DateTime | service_type | Amount | Details |      Request      |
+            --------------------------------------------------------------------------------------
+            | 1   | ...  | ...  | ........ | ............ | ...... | [view]  | [accept] [reject] |
+
+---------------- Details of customer (when clicked [view more]):- id,name,phno,place,aadhar_num                
+
+
+----------- ii. View all appointments accepted (table: displaying SNO,Name,Phno,DateTime,service_type,Amount,[view more],accepted,status(buttons = pending,completed))
+            | SNO | Name | Phno | DateTime | service_type | Details | Amount |      Request      |       status         |
+            -------------------------------------------------------------------------------------------------------------
+            | 1   | ...  | ...  | ........ | ............ | [view]  | ...... |      accepted     | [pending][completed] |
+
+---------------- Details of customer (when clicked [view more]):- id,name,phno,place,aadhar_num
+
+
+----------- iii. View all appointments which rejected or (accepted + status=completed) -> (table: displaying SNO,Name,Phno,DateTime,service_type,Amount,[view more],accepted or rejected,status=completed) 
+        | SNO | Name | Phno | DateTime | service_type | Amount | Details |      Request         |          status            |
+        ----------------------------------------------------------------------------------------------------------------------
+        | 1   | ...  | ...  | ........ | ............ | ...... | [view]  | accepted or rejected |      completed or ----     |
+
+---------------- Details of customer (when clicked [view]):- id,name,phno,place,aadhar_num
+
+
+----------- iv. View details -> (Total amount recieved,Total persons accepted & status=done,Total persons rejected)
+
+
+----------- v. logout (redirects to Login page)
+
+
+*** Step-3 :- ***
+---- If Customer :-
+------- i. Asks for login (name,phno -> inputs,login -> button,create an account -> text,register -> button)
+------- ii. NavBar :-
+----------- i. Home (CarWash) -> About the car-wash and advantages and rating of company...etc
+----------- ii. Different Services - information (images,info)
+----------- iii. Requesting appointment for specific service (images,[request for appointment])
+---------------- Detais of appointment (place,aadhar_num -> inputs, [request] (confirmation for appointment requesting (js)))
+----------- iv. Requested services - List of services accepted or rejected by admin (table: SNO,DateTime,service_type,accepted or rejected)
+                | SNO | DateTime | service_type | Amount |      Request         |           status            |
+                -----------------------------------------------------------------------------------------------
+                | 1   | ........ | ............ | ...... | accepted or rejected | pending or completed or --- |
+
+
+----------- v. logout (redirects to login page)
+
+
+*** Data bases required :- ***
+-- i. Registered customers table -> customer.id,name,phno(for login). Values will be added from register page (name,phno)
+-- ii. Appointments table (by customers) -> customer.id,name,phno,DateTime,service_type,place,aadhar
+----- Values will be added when the customer requested for appointment
+-- iii. Appointments table (by admin) -> customer.id,name,phno,requested DateTime,place,aadhar,accepted or rejected,status=(--,pending,completed)
+----- Values will be added from above table after admin accepts or rejects
+-- iv. Amount Table (by admin) -> customer.id,name,phno,requested DateTime,place,aadhar,request=accepted,status=completed,amount
+
+
+*** Structure :- ***
+
+Project-1 
+    |
+    |---- templates
+    |         |
+    |         |---- master
+    |         |       |
+    |         |       |---- master-logged-in.html
+    |         |
+    |         |---- signup.html                  
+    |         |---- login.html                   
+    |         |---- index.html                    
+    |         |---- appointments_requested.html  
+    |         |---- appoinments_accepted.html
+    |         |---- past_appointments.html
+    |         |---- view_more.html 
+    |         |---- view_details.html
+    |         |---- services.html
+    |         |---- appoinment_requesting.html
+    |         |---- services_requested.html
+    |
+    |---- app.py 
+    |---- db.py 
+    |---- test_db.py
