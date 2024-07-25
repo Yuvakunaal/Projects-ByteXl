@@ -58,7 +58,7 @@
 
 
 *** Data bases required :- ***
--- i. Registered customers table -> customer.id,name,phno(for login). Values will be added from register page (name,phno)
+-- i. Registered customers table -> customer.id,name,phno(for login). Values will be added from register page (name,phno).
 -- ii. Appointments table (by customers) -> customer.id,name,phno,DateTime,service_type,place,aadhar
 ----- Values will be added when the customer requested for appointment
 -- iii. Appointments table (by admin) -> customer.id,name,phno,requested DateTime,place,aadhar,accepted or rejected,status=(--,pending,completed)
@@ -91,3 +91,5 @@ Project-1
     |---- app.py 
     |---- db.py 
     |---- test_db.py
+
+background color : #374151
