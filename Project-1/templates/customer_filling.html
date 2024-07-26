@@ -1,0 +1,42 @@
+{% extends 'master/master-customer-logged-in.html' %} {% block main %} 
+
+<br>
+<br>
+<h3 align="center" style="color: aliceblue;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Fill the below details</h3>
+<br>
+<br>
+<div class="custfilll-container">
+    <form method="POST" onsubmit="return willrequest();" id="customer-form" >
+    <div class="mb-3 form-group">
+      <label for="title" class="form-label">Place (Hyderabad,Chennai,Delhi)</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        pattern="^(Hyderabad|Chennai|Delhi)$"
+        placeholder="type your place..."
+        required
+      />
+    </div>
+    <div class="mb-3 form-group">
+      <label for="notes" class="form-label">Aadhar Number</label>
+      <input type="text" class="form-control" id="aadhar" name="aadhar" pattern="\d{12}" maxlength="12" placeholder="type your 12 digit aadhar number...." required/>
+    </div>
+    <h1 align="center">
+        <button type="submit" class="btn btn-outline-dark">confirm request</button>
+    </h1>
+</form>
+</div>
+{% endblock %} 
+{% block script %}
+<script type="text/javascript">
+  function willrequest() {
+    if (!confirm("Are you sure to request appointment ?")) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+</script>
+{% endblock %}

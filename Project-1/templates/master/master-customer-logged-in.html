@@ -55,11 +55,13 @@
         background-color: var(--accent-color);
         border-radius: 12px;
       }
+
       nav .title {
         padding-left: 20px;
         font-size: 25px;
         text-decoration: none;
         color: white;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       }
       nav .title:hover {
         background-color: var(--color-1);
@@ -157,23 +159,58 @@
         color: #666666;
       }
 
-      /* Card Button */
-      .card-button {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 1rem;
-        color: #ffffff;
-        background-color: #007bff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-align: center;
-        text-decoration: none;
-        transition: background-color 0.2s;
+      .home-container{
+        margin: 0 auto;
+        margin-top: 20px;
+        width:80%;
+        padding : 20px;
+        border : 1px solid black;
+        border-radius: 10px;
+        background-color: aquamarine;
+        transition: transform 0.3s;
       }
 
-      .card-button:hover {
-        background-color: #0056b3;
+      .home-container:hover{
+        transform: translateY(-4px);
+      }
+
+      .footerr{
+        color: white;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .req-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; 
+      }
+      
+      .requesting-table {
+        width: 80%;
+        margin: auto;
+        border-collapse: collapse;
+      }
+      .requesting-table th, .requesting-table td {
+        padding: 20px;
+        text-align: center;
+      }
+      
+      .requesting-table th {
+        background-color: #f2f2f2;
+      }
+      .requesting-table td{
+        background-color: rgb(65, 186, 146);
+      }
+
+      .custfilll-container{
+        background-color: #e4e5e5;
+        padding:30px;
+        margin: auto;
+        width : 70%;
+        border: 1px solid grey;
+        border-radius: 15px;
       }
 
       @media (max-width: 550px) {
@@ -226,18 +263,8 @@
   </head>
   <body>
     <nav>
-      <a href="/" class="title">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 -960 960 960"
-          width="40px"
-          fill="#ADD8E6"
-        >
-          <path
-            d="M480-760q-25 0-42.5-17.5T420-820q0-21 14.5-45t45.5-55q31 31 45.5 55t14.5 45q0 25-17.5 42.5T480-760Zm-200 0q-25 0-42.5-17.5T220-820q0-21 14.5-45t45.5-55q31 31 45.5 55t14.5 45q0 25-17.5 42.5T280-760Zm400 0q-25 0-42.5-17.5T620-820q0-21 14.5-45t45.5-55q31 31 45.5 55t14.5 45q0 25-17.5 42.5T680-760ZM240-120v40q0 17-11.5 28.5T200-40h-40q-17 0-28.5-11.5T120-80v-320l84-240q6-18 21.5-29t34.5-11h440q19 0 34.5 11t21.5 29l84 240v320q0 17-11.5 28.5T800-40h-40q-17 0-28.5-11.5T720-80v-40H240Zm-8-360h496l-42-120H274l-42 120Zm-32 80v200-200Zm100 160q25 0 42.5-17.5T360-300q0-25-17.5-42.5T300-360q-25 0-42.5 17.5T240-300q0 25 17.5 42.5T300-240Zm360 0q25 0 42.5-17.5T720-300q0-25-17.5-42.5T660-360q-25 0-42.5 17.5T600-300q0 25 17.5 42.5T660-240Zm-460 40h560v-200H200v200Z"
-          />
-        </svg>
+      <a href="/customer_home" class="title">
+        Car Wash
       </a>
       <input type="checkbox" id="sidebar-active" />
       <label for="sidebar-active" class="open-sidebar-button">
@@ -282,13 +309,14 @@
               /></svg
           ></a>
           <div class="dropdown-content" id="dropdown-content">
-            <a href="/request_appointment">Request</a>
+            <a href="/appointment_requesting">Request</a>
             <a href="/services_requested">Requested</a>
           </div>
         </div>
         <a class="nav-link" href="/login_customer">Logout</a>
       </div>
     </nav>
+
     <script>
       document
         .getElementById("dropdown-toggle")
@@ -311,6 +339,7 @@
         }
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     {% block main %}pageUI{% endblock %} {% block script %}{% endblock %}
   </body>
 </html>

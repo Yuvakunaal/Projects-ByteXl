@@ -40,6 +40,13 @@ def services():
 def appointment_requesting():
     return render_template("appointment_requesting.html",menu="Requesting Appointment")
 
-@app.route('/appointments_requested')
+@app.route('/services_requested')
 def appointments_requested():
-    return render_template("appointments_requested.html",menu='Requested Appointment')
+    return render_template("services_requested.html",menu='Requested Services')
+
+@app.route('/customer_filling',methods=["GET","POST"])
+def customer_filling():
+    if request.method == "POST":
+        return redirect("/appointment_requesting")
+    elif request.method == "GET":
+        return render_template("customer_filling.html",menu="Customer Filling")

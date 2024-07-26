@@ -1,0 +1,42 @@
+{% extends 'master/master-customer-logged-in.html' %} {% block main %} 
+
+<div class="req-container">
+    <table align="center" border="1" class="requesting-table">
+        <thead>
+            <tr align="center">
+                <th>
+                    Service Name
+                </th>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    Request
+                </th>
+            </tr>
+            <tr align="center">
+                <td>Internal Wash</td>
+                <td>5000/-</td>
+                <td>
+                    <button class="btn btn-warning"><a href="/customer_filling" style="text-decoration:none;color:black">request</a></button>
+                </td>
+            </tr>
+            <tr align="center">
+                <td>External Wash</td>
+                <td>8000/-</td>
+                <td>
+                    <button class="btn btn-warning"><a href="/customer_filling" style="text-decoration:none;color:black">request</a></button>
+                </td>
+            </tr>
+            <tr  align="center">
+                <td>Comprehensive Wash</td>
+                <td>12500/-</td>
+                <td>
+                    <button class="btn btn-warning"><a href="/customer_filling" style="text-decoration:none;color:black">request</a></button>
+                </td>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+{% endblock %}
