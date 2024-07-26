@@ -3,7 +3,7 @@ from flask import Flask,request,redirect,render_template
 app = Flask(__name__)
 @app.route("/")
 def index():
-    return render_template("actors.html",menu='Admin or customer')
+    return render_template("index.html",menu='Admin or customer')
 
 @app.route('/login_admin',methods=["GET","POST"])
 def login_admin():
