@@ -1,0 +1,27 @@
+{% extends 'master/master-admin-logged-in.html' %}
+{% block main %}
+
+<br>
+<br>
+<h3 align="center" style="color: aliceblue;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Total Customer Details</h3>
+<br>
+<div class="custfilll-container">
+    <div class="mb-3 form-group">
+      <label for="place" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" readonly/>
+    </div>
+    <div class="mb-3 form-group">
+      <label for="notes" class="form-label">Phone Number</label>
+      <input type="text" class="form-control" id="aadhar" name="aadhar" readonly/>
+    </div>
+    <div class="mb-3 form-group">
+        <label for="notes" class="form-label">Place</label>
+        <input type="text" class="form-control" id="place" name="place" readonly/>
+    </div>
+    <div class="mb-3 form-group">
+        <label for="notes" class="form-label">Aadhar Number</label>
+        <input type="text" class="form-control" id="aadhar" name="aadhar" readonly/>
+    </div>
+</div>
+
+{% endblock %}

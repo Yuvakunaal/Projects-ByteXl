@@ -213,6 +213,53 @@
         border-radius: 15px;
       }
 
+      /* Container */
+      .sev-req-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Full height */
+      }
+
+      /* Table Container */
+      .sev-req-table-container {
+        overflow-x: auto;
+      }
+
+      /* Table */
+      .sev-req-table {
+        min-width: 100%; /* Equivalent to min-w-full */
+        text-align: left; /* Equivalent to text-left */
+        font-size: 0.875rem; /* Equivalent to text-sm */
+        font-weight: 300; /* Equivalent to font-light */
+      }
+
+      /* Table Header */
+      .sev-req-table-header {
+        background-color: #000000; /* Equivalent to bg-gray-800 */
+        font-weight: 500; /* Equivalent to font-medium */
+        color: #fff; /* Equivalent to text-white */
+        border-bottom: 1px solid #e5e7eb; /* Equivalent to border-b */
+      }
+
+      .sev-req-table-header th {
+        padding: 1rem 1.5rem; /* Equivalent to px-6 py-4 */
+      }
+
+      /* Table Body */
+      .sev-req-table-body tr {
+        background-color: #fff; /* Equivalent to bg-white */
+        border-bottom: 1px solid #e5e7eb; /* Equivalent to border-b */
+      }
+
+      .sev-req-table-body tr:hover {
+        background-color: #f3f4f6; /* Equivalent to hover:bg-gray-100 */
+      }
+
+      .sev-req-table-body td {
+        padding: 1rem 1.5rem; /* Equivalent to px-6 py-4 */
+      }
+
       @media (max-width: 550px) {
         .links-container {
           flex-direction: column;

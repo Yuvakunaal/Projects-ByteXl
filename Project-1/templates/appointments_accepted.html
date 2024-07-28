@@ -1,7 +1,6 @@
 {% extends 'master/master-admin-logged-in.html' %}
 {% block main %}
 
-
 <div class="app-req-container">
     <div class="app-req-table-container">
       <table class="app-req-table">
@@ -15,6 +14,7 @@
             <th scope="col">Amount</th>
             <th scope="col">Details</th>
             <th scope="col">Request</th>
+            <th scope="col">Status</th>
           </tr>
         </thead>
         <tbody class="app-req-table-body">
@@ -30,12 +30,13 @@
                     <button class="btn btn-primary">view more</button>
                 </a>
             </td>
+            <td>Accepted</td>
             <td>
                 <a>
-                    <button class="btn btn-success" onclick="willaccept()">Accept</button>
+                    <button class="btn btn-warning" onclick="willpending()">pending</button>
                 </a>
                 <a>
-                    <button class="btn btn-danger" onclick="willreject()">Reject</button>
+                    <button class="btn btn-success" onclick="willcompleted()">completed</button>
                 </a>
             </td>
           </tr>
@@ -48,20 +49,21 @@
 
 {% block script %}
 <script type="text/javascript">
-  function willaccept() {
-    if (!confirm("Are you sure to accept ?")) {
+  function willpending() {
+    if (!confirm("Are you sure to make it pending ?")) {
       return false;
     } else {
       return true;
     }
   }
-  function willreject() {
-    if (!confirm("Are you sure to reject ?")) {
+  function willcompleted() {
+    if (!confirm("Are you sure to make it completed ?")) {
       return false;
     } else {
       return true;
     }
   }
 </script>
+
 
 {% endblock %}

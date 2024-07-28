@@ -1,0 +1,41 @@
+{% extends 'master/master-admin-logged-in.html' %}
+{% block main %}
+
+<div class="app-req-container">
+    <div class="app-req-table-container">
+      <table class="app-req-table">
+        <thead class="app-req-table-header">
+          <tr align="center">
+            <th scope="col">SNO</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Date Time</th>
+            <th scope="col">Services</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Details</th>
+            <th scope="col">Request</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody class="app-req-table-body">
+          <tr>
+            <td>1</td>
+            <td>kunaal</td>
+            <td>8888888888</td>
+            <td>{{ time }}</td>
+            <td>Internal Wash</td>
+            <td>5000/-</td>
+            <td>
+                <a href="/view_more">
+                    <button class="btn btn-primary">view more</button>
+                </a>
+            </td>
+            <td>Accepted or rejected</td> 
+            <td>completed or --</td>  <!-- if 'accepted' = 'completed', if 'rejected = '--' -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %}
